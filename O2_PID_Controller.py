@@ -1,3 +1,14 @@
+"""
+This code was originally developed by the following authors
+Conner Earl, Emilee Hunter, Miranda Burnham, Payden Yates
+December 14, 2017
+"""
+
+
+
+
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import odeint
@@ -40,7 +51,7 @@ def model(x,t,u,H):
 x01 = np.array([0.21, 0.95]) # initial conditions 
 u_ss = 0.21 # mole fraction
 H_ss = 130.0 # HR
-tf = 30      # simulate for 1000 sec
+tf = 30      # simulate for 30 sec
 ns = (tf*4)+1  # sample time = 10 min
 
 t = np.linspace(0,tf,ns)
@@ -211,7 +222,7 @@ plt.show()
 #PI CONTROLLER
 
 #Heart rate disturbance variabel
-mydata = np.loadtxt('mydata.csv',delimiter=',') 
+mydata = np.loadtxt('simulated_HR.csv',delimiter=',') 
 #PI tuning
 Kp = x[0]
 taup = x[1]
@@ -254,13 +265,13 @@ pv[0] = .80 #Initial parameter infant in respiratory distress
 # Create plot
 plt.figure(figsize=(10,7))
 
-# Animating plot slows down script
-animate = False#True
+# Note: Animating plot slows down script
+animate = False #True
 if animate:
     plt.ion()
     plt.show()
 
-mydata = np.genfromtxt('mydata.csv')
+mydata = np.genfromtxt('simulated_HR.csv')
 
 for i in range(len(t)-1):
     delta_t = t[i+1]-t[i]

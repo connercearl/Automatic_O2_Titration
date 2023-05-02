@@ -21,6 +21,12 @@ O2_PID_Controller.py- PID controller
 
 simulated_HR.csv- CSV file of simulated "heart rate disturbance"
 
+## Contributions
+
+This code was originally developed by the following authors:
+
+Conner Earl, Emilee Hunter, Miranda Burnham, Payden Yates
+December 14, 2017
 
 
 
